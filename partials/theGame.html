@@ -4,8 +4,11 @@
 	</aside>
 	<div class="gridsterInnerWrapper" gridster="ngGridsterOpts">
 		<li id="{{item.id}}" gridster-item="ngGridsterItemsMap" ng-repeat="item in ngGridsterItems">
-			<img ng-src="{{ngGridsterImageGal[item.id].src}}" ng-mouseover="testMouseOver(item)"></img>
-		</li>		
+			<img ng-src="{{ngGridsterImageGal[item.id].src}}" ng-mousedown="testMouseDown(ngGridsterImageGal[item.id])" ng-mouseup="testMouseUp(ngGridsterImageGal[item.id])"></img>
+		</li>
+	</div>
+	<div class="testScopeImg" ng-repeat="img in ngGridsterImageGal">
+		<img ng-if="img.animate" class="fade" ng-src="{{img.src}}" ng-show="img.show"></img>
 	</div>
 	<div class="developer"><a href="http://privatewebtailor.com/" target="_blank">Developed by Melentyev S.</a></div>
 </main>
