@@ -1,4 +1,5 @@
 'use strict';
+
 var timeoutID;
 window.addEventListener("load", function load(event){
 	window.removeEventListener("load", load, false); 
@@ -29,7 +30,7 @@ function startApplication () {
 			top: '50%',
 			left: '50%',
 			xPercent: -50,
-			yPercent: -35
+			yPercent: -50
 	})
 	TweenMax.set([loadLine, loadLineTip], {
 	  drawSVG:'-0.5% 0%'
@@ -134,5 +135,29 @@ function startApplication () {
 	  ease:Power2.easeInOut
 	}, '-=0.5')
 
-	function playAgain(){}
+	function playAgain(){
+		var matureContent = $('.matureContent'),
+			btn = $('.btn'),
+			container = $('.container');
+
+		matureContent.css({'visibility': 'initial'});
+		btn.css({'visibility': 'initial'});
+		container.transition({ opacity: 0, delay: 1000 }, 250, 'easeOutQuad', matureContStart());
+		function matureContStart(){
+			matureContent.transition({ y: 5, opacity: 1, delay: 1500 }, 1000, 'easeOutQuad');
+			btn.transition({ y: 5, opacity: 1, delay: 1250 }, 1000, 'easeOutQuad');
+		}
+	}
 };
+
+
+
+
+
+
+
+
+
+
+
+

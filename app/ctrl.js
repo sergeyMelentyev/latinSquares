@@ -67,7 +67,7 @@ latinSquaresGame.controller('ctrl', ['$scope', '$rootScope', function($scope, $r
 		swapping: true,
 		width: 'auto',
 		colWidth: 'auto',
-		rowHeight: 'match',
+		rowHeight: '55',
 		margins: [15, 15],
 		outerMargin: true,
 		isMobile: false,
@@ -100,97 +100,97 @@ latinSquaresGame.controller('ctrl', ['$scope', '$rootScope', function($scope, $r
 
 	$scope.ngGridsterImageGal = [
 		{
-		    src: "img/bg.jpg",
+		    src: "img/d2.png",
 		    show: false,
 		    animate: false,
 		    id: 0
 		},
 		{
-		    src: "img/bg.jpg",
+		    src: "img/j3.png",
 		    show: false,
 		    animate: false,
 		    id: 1
 		},
 		{
-		    src: "img/bg.jpg",
+		    src: "img/a1.png",
 		    show: false,
 		    animate: false,
 		    id: 2
 		},
 		{
-		    src: "img/bg.jpg",
+		    src: "img/d1.png",
 		    show: false,
 		    animate: false,
 		    id: 3
 		},
 		{
-		    src: "img/bg.jpg",
+		    src: "img/j2.png",
 		    show: false,
 		    animate: false,
 		    id: 4
 		},
 		{
-		    src: "img/bg.jpg",
+		    src: "img/a4.png",
 		    show: false,
 		    animate: false,
 		    id: 5
 		},
 		{
-		    src: "img/bg.jpg",
+		    src: "img/d4.png",
 		    show: false,
 		    animate: false,
 		    id: 6
 		},
 		{
-		    src: "img/bg.jpg",
+		    src: "img/a3.png",
 		    show: false,
 		    animate: false,
 		    id: 7
 		},
 		{
-			src: "img/bg.jpg",
+			src: "img/k3.png",
 			show: false,
 			animate: false,
 			id: 8
 		},
 		{
-			src: "img/bg.jpg",
+			src: "img/k2.png",
 			show: false,
 			animate: false,
 			id: 9
 		},
 		{
-			src: "img/bg.jpg",
+			src: "img/k1.png",
 			show: false,
 			animate: false,
 			id: 10
 		},
 		{
-			src: "img/bg.jpg",
+			src: "img/j4.png",
 			show: false,
 			animate: false,
 			id: 11
 		},
 		{
-			src: "img/bg.jpg",
+			src: "img/j1.png",
 			show: false,
 			animate: false,
 			id: 12
 		},
 		{
-			src: "img/bg.jpg",
+			src: "img/d3.png",
 			show: false,
 			animate: false,
 			id: 13
 		},
 		{
-			src: "img/bg.jpg",
+			src: "img/a2.png",
 			show: false,
 			animate: false,
 			id: 14
 		},
 		{
-			src: "img/5.jpg",
+			src: "img/k4.png",
 			show: false,
 			animate: false,
 			id: 15
