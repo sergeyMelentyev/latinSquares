@@ -1,3 +1,5 @@
+'use strict';
+
 latinSquaresGame.controller('ctrl', ['$scope', '$rootScope', function($scope, $rootScope) {
 
 	$scope.ngGridsterItems = [
@@ -29,25 +31,25 @@ latinSquaresGame.controller('ctrl', ['$scope', '$rootScope', function($scope, $r
 			size: { x: 2, y: 3 }, position: [4, 0], id: 8
 		},
 		{ 
-			size: { x: 2, y: 3 }, position: [4, 2], id: 8
+			size: { x: 2, y: 3 }, position: [4, 2], id: 9
 		},
 		{ 
-			size: { x: 2, y: 3 }, position: [4, 4], id: 8
+			size: { x: 2, y: 3 }, position: [4, 4], id: 10
 		},
 		{ 
-			size: { x: 2, y: 3 }, position: [4, 6], id: 8
+			size: { x: 2, y: 3 }, position: [4, 6], id: 11
 		},
 		{ 
-			size: { x: 2, y: 3 }, position: [6, 0], id: 8
+			size: { x: 2, y: 3 }, position: [6, 0], id: 12
 		},
 		{ 
-			size: { x: 2, y: 3 }, position: [6, 2], id: 8
+			size: { x: 2, y: 3 }, position: [6, 2], id: 13
 		},
 		{ 
-			size: { x: 2, y: 3 }, position: [6, 4], id: 8
+			size: { x: 2, y: 3 }, position: [6, 4], id: 14
 		},
 		{ 
-			size: { x: 2, y: 3 }, position: [6, 6], id: 8
+			size: { x: 2, y: 3 }, position: [6, 6], id: 15
 		}
 	];
 
@@ -163,9 +165,7 @@ latinSquaresGame.controller('ctrl', ['$scope', '$rootScope', function($scope, $r
 		},
 	];
 
-	$scope.testMouseOver = function(item){
-		console.log(item.id);
-	}
+
 
 
 
