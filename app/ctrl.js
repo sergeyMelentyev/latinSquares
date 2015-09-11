@@ -101,73 +101,120 @@ latinSquaresGame.controller('ctrl', ['$scope', '$rootScope', function($scope, $r
 	$scope.ngGridsterImageGal = [
 		{
 		    src: "img/bg.jpg",
+		    show: false,
+		    animate: false,
+		    id: 0
+		},
+		{
+		    src: "img/bg.jpg",
+		    show: false,
+		    animate: false,
 		    id: 1
 		},
 		{
 		    src: "img/bg.jpg",
+		    show: false,
+		    animate: false,
 		    id: 2
 		},
 		{
 		    src: "img/bg.jpg",
+		    show: false,
+		    animate: false,
 		    id: 3
 		},
 		{
 		    src: "img/bg.jpg",
+		    show: false,
+		    animate: false,
 		    id: 4
 		},
 		{
 		    src: "img/bg.jpg",
+		    show: false,
+		    animate: false,
 		    id: 5
 		},
 		{
 		    src: "img/bg.jpg",
+		    show: false,
+		    animate: false,
 		    id: 6
 		},
 		{
 		    src: "img/bg.jpg",
+		    show: false,
+		    animate: false,
 		    id: 7
 		},
 		{
-		    src: "img/bg.jpg",
-		    id: 8
+			src: "img/bg.jpg",
+			show: false,
+			animate: false,
+			id: 8
 		},
 		{
 			src: "img/bg.jpg",
+			show: false,
+			animate: false,
 			id: 9
 		},
 		{
 			src: "img/bg.jpg",
+			show: false,
+			animate: false,
 			id: 10
 		},
 		{
 			src: "img/bg.jpg",
+			show: false,
+			animate: false,
 			id: 11
 		},
 		{
 			src: "img/bg.jpg",
+			show: false,
+			animate: false,
 			id: 12
 		},
 		{
 			src: "img/bg.jpg",
+			show: false,
+			animate: false,
 			id: 13
 		},
 		{
 			src: "img/bg.jpg",
+			show: false,
+			animate: false,
 			id: 14
 		},
 		{
-			src: "img/bg.jpg",
+			src: "img/5.jpg",
+			show: false,
+			animate: false,
 			id: 15
-		},
-		{
-			src: "img/bg.jpg",
-			id: 16
 		},
 	];
 
 
+$scope.testMouseDown = function(ngGridsterImageGal){
+	$('.theGameContent').transition({ y: 10 }, 250, 'easeOutQuad' );
+	for (var i = $scope.ngGridsterImageGal.length - 1; i >= 0; i--) {
+		if (ngGridsterImageGal.id === $scope.ngGridsterImageGal[i].id) {
+			$scope.ngGridsterImageGal[i].show = true;
+			$scope.ngGridsterImageGal[i].animate = true;
+		};
+	};
 
-
+}
+$scope.testMouseUp = function(ngGridsterImageGal){
+	$('.theGameContent').transition({ y: 0 }, 250, 'easeOutQuad' );
+	for (var j = $scope.ngGridsterImageGal.length - 1; j >= 0; j--) {
+		$scope.ngGridsterImageGal[j].show = false;
+		$scope.ngGridsterImageGal[j].animate = false;
+	};
+}
 
 
 }]); // КОНЕЦ КОНТРОЛЛЕРА
