@@ -3,8 +3,9 @@
 		<h1>In combinatorics and in experimental design, a Latin square is an "n × n" array filled with "n" different symbols, each occurring exactly once in each row and exactly once in each column.</h1>
 	</aside>
 	<div class="gridsterInnerWrapper" gridster="ngGridsterOpts">
-		<li gridster-item="ngGridsterItemsMap" ng-repeat="item in ngGridsterItems">
+		<li id="{{item.id}}" gridster-item="ngGridsterItemsMap" ng-repeat="item in ngGridsterItems">
 			<img ng-src="{{ngGridsterImageGal[item.id].src}}" ng-mouseover="testMouseOver(item)"></img>
 		</li>		
 	</div>
+	<div class="developer"><a href="http://privatewebtailor.com/" target="_blank">Developed by Melentyev S.</a></div>
 </main>
