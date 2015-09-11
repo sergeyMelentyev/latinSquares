@@ -1,3 +1,40 @@
+<div class="container">
+	<svg class="lineSVG" version="1.1" x="0px" y="0px" width="900px" height="600px" viewBox="0 0 900 600">
+		<defs>
+			<filter id="glow" width="400%" x="-50%" y="-50%" height="200%">
+				<feGaussianBlur stdDeviation="2 2" result="coloredBlur"/>
+				<feMerge>
+					<feMergeNode in="coloredBlur"/>
+					<feMergeNode in="SourceGraphic"/>
+				</feMerge>
+			</filter> 
+			<filter id="heavyGlow" width="400%" x="-50%" y="-50%" height="200%">
+				<feGaussianBlur stdDeviation="9 9" result="coloredBlur"/>
+				<feMerge>
+					<feMergeNode in="coloredBlur"/>
+					<feMergeNode in="SourceGraphic"/>
+				</feMerge>
+			</filter> 
+		</defs>
+		<line class="loadLineGhost" fill="none" stroke="#1E1E24" stroke-width="2" stroke-linecap="none" stroke-linejoin="none" stroke-miterlimit="10" x1="100" y1="340" x2="800" y2="340" opacity="0" />
+		<line class="loadLineTip" filter="url(#heavyGlow)" fill="none" stroke="#5CE2ED" stroke-width="2" stroke-linecap="none" stroke-linejoin="none" stroke-miterlimit="10" x1="100" y1="340" x2="800" y2="340" />
+		<g class="lineGroup" filter="url(#glow)" >
+			<line class="loadLine" fill="none" stroke="#5CE2ED" stroke-width="2" stroke-linecap="none" stroke-linejoin="none" stroke-miterlimit="10" x1="100" y1="340" x2="800" y2="340" />
+			<g class="refreshGroup" >
+				<path class="tick" fill="none" stroke="#5CE2ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M53.5,11.4l-24,32.1l-14-9"/>
+				<circle class="refreshCircle" fill="rgba(0,0,0,0)" stroke="#5CE2ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="30" cy="30" r="30"/>
+			</g>
+		</g>
+	</svg>
+	<div class="downloading">Downloading</div> 
+	<div class="refresh">Success!</div> 
+</div>
+
+
 <div class="yourAgeQuestionWrapper">
-	<a ui-sref="theGame"><button type="button" class="btn">Yes</button></a>
+	<div class="matureContent">
+		<h1>Mature content, please verify your age</h1>
+	</div>
+	<a ui-sref="theGame"><button type="button" class="btn">I certify that I am 18 years of age or older</button></a>
 </div>
