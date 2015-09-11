@@ -157,7 +157,23 @@ body{
   left: 0px;
   right: 0px;
   margin: auto;
-  background-color: #35353F;
+  background: url('../img/bg.jpg'); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  background-size: cover;
+}
+.bgFix{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .gridsterInnerWrapper{
   position: absolute;
@@ -218,7 +234,7 @@ body{
   bottom: 0px;
   right: 50px;
   margin: auto;
-  opacity: 0.15;
+  opacity: 0.45;
 }
 .testScopeImg img{
   width: 100%;
@@ -233,8 +249,9 @@ body{
 }
 
 
-/*
-background image
-http://www.freepik.com/free-vector/science-abstract-background_761460.htm
-http://cynthiafranca.deviantart.com/gallery/?offset=24
-*/
+
+
+
+
+
+

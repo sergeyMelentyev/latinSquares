@@ -199,7 +199,7 @@ latinSquaresGame.controller('ctrl', ['$scope', '$rootScope', function($scope, $r
 
 
 $scope.testMouseDown = function(ngGridsterImageGal){
-	$('.theGameContent').transition({ y: 10 }, 250, 'easeOutQuad' );
+	$('.theGameContent').transition({ y: 10, opacity: 0.25 }, 250, 'easeOutQuad' );
 	for (var i = $scope.ngGridsterImageGal.length - 1; i >= 0; i--) {
 		if (ngGridsterImageGal.id === $scope.ngGridsterImageGal[i].id) {
 			$scope.ngGridsterImageGal[i].show = true;
@@ -209,7 +209,7 @@ $scope.testMouseDown = function(ngGridsterImageGal){
 
 }
 $scope.testMouseUp = function(ngGridsterImageGal){
-	$('.theGameContent').transition({ y: 0 }, 250, 'easeOutQuad' );
+	$('.theGameContent').transition({ y: 0, opacity: 1 }, 250, 'easeOutQuad' );
 	for (var j = $scope.ngGridsterImageGal.length - 1; j >= 0; j--) {
 		$scope.ngGridsterImageGal[j].show = false;
 		$scope.ngGridsterImageGal[j].animate = false;
