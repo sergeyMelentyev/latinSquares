@@ -58,6 +58,9 @@ body{
   text-shadow: 0px 0px 5px #fff;
   font-family: 'Open Sans Condensed', sans-serif;
 }
+.smallScreen{
+  display: none;
+}
 .matureContent{
   position: absolute;
   z-index: 9;
@@ -200,7 +203,7 @@ body{
 .theGameContent{
   position: absolute;
   z-index: 99;
-  width: 30%;
+  width: 430px;
   height: 245px;
   overflow: hidden;
   top: 0px;
@@ -248,8 +251,42 @@ body{
   opacity: 1;
 }
 
+@media all and (max-width: 569px) {
+  .container{display: none;}
+  .smallScreen{
+    display: block;
+    position: absolute;
+    z-index: 999;
+    width: 290px;
+    height: 275px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    font-size: 25px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 0px 5px #5CE2ED, 0px 0px 5px #5CE2ED;
+  }
+}
 
-
+@media all and (max-width: 1025px) and (min-width: 569px) {
+  .theGameContent, .testScopeImg{display: none;}
+  .gridsterInnerWrapper{
+    position: absolute;
+    width: 550px;
+    height: 675px !important;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+  .btn{
+    width: 320px;
+  }
+}
 
 
 
