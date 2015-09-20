@@ -3,161 +3,45 @@
 var timeoutID;
 window.addEventListener("load", function load(event){
 	window.removeEventListener("load", load, false); 
-	timeoutID = window.setTimeout(startApplication, 1000);
+	timeoutID = window.setTimeout(startApplication, 10);
 },false);
 function startApplication () {
-	var container = document.querySelector('.container');
-	var lineSVG = document.querySelector('.lineSVG');
-	var downloading = document.querySelector('.downloading');
-	var refresh = document.querySelector('.refresh');
-	var loadLine = document.querySelector('.loadLine');
-	var loadLineTip = document.querySelector('.loadLineTip');
-	var loadLineGhost = document.querySelector('.loadLineGhost');
-	var refreshCircle = document.querySelector('.refreshCircle');
-	var tick = document.querySelector('.tick');
-	var refreshGroup = document.querySelector('.refreshGroup');
-	var failAt = 100;
-	var glowTipLengthPercent = 5;
-	var lineStart = Number(loadLine.getAttribute('x1'));
-	var lineEnd = Number(loadLine.getAttribute('x2'));
-	var lineLength =  lineEnd -  lineStart;
-	var failPercent = failAt/100;
-	var refreshCircleRadius = Number(refreshCircle.getAttribute('r'));
-	var refreshCircleRadiusAsPercentOfLine = (refreshCircleRadius/lineLength) * 100;
+    $('.matureContent').css({'visibility': 'initial'});
+    $('.btn').css({'visibility': 'initial'});
+    firstPageSimpleAnimation('.matureContent', 0, 5, 1, 1500, 1000);
+    firstPageSimpleAnimation('.btn', 0, 5, 1, 1250, 1000);
+    firstPageSimpleAnimation('.agePageLogo', 0, 25, 1, 1000, 2000);
+    firstPageSimpleAnimation('.agePageDescription', 0, 25, 1, 1000, 2000);
+    animationFirstPage();
+}
 
-	TweenMax.set(container, {
-			position: 'absolute',
-			top: '50%',
-			left: '50%',
-			xPercent: -50,
-			yPercent: -50
-	})
-	TweenMax.set([loadLine, loadLineTip], {
-	  drawSVG:'-0.5% 0%'
-	})
-	TweenMax.set([tick], {
-	  drawSVG:'0% 0%',
-	  alpha:0
-	})
-	TweenMax.set([refreshCircle], {
-	  drawSVG:'0% 0%',
-	  alpha:0
-	})
-	TweenMax.set([refreshGroup], {
-	  y:310
-	})
-	var tl = new TimelineMax();
-	tl.set(refreshGroup, {
-	  alpha:1,
-	  x:(failPercent * lineLength) + lineStart - (refreshCircleRadius*2)
-	})
-	.to(loadLineGhost, 1,{
-	  alpha:0.5
-	})
-	.to([loadLine,], 3, {
-	  drawSVG:failAt +'% 0%',
-	  ease:SteppedEase.config(40)
-	})
-	.to([loadLineTip,], 3, {
-	  drawSVG:failAt +'% ' + (failAt - glowTipLengthPercent)+'%',
-	  ease:SteppedEase.config(40)
-	},'-=6')
-	.from([loadLine, loadLineTip], 0.1,{
-	  immediateRender:false,
-	  stroke:'green',
-	  repeat:12, 
-	  yoyo:true
-	})
-	.set([ refreshCircle], {
-	  alpha:1
-	})
-	.to(loadLineTip, 1, {
-	  drawSVG:(failAt)+'% ' + (failAt)+'%'
-	})
-	 .to([ refreshCircle], 1, {
-	  drawSVG:'0% 88%'
-	},'-=1')
-	.to([loadLine, loadLineTip], 1, {
-	  drawSVG:(failAt)+'% ' + (failAt)+'%'
-	},'-=1')
-	.set([ tick], {
-	  alpha:1
-	})
-	.to([ tick], 1, {
-	  drawSVG:'95% 0%'
-	})
-	.to(refreshGroup, 2, {
-	  x:(lineLength/2) + (lineStart - (refreshCircleRadius)),
-	  rotation:-360,
-	  transformOrigin:'50% 50%',
-	  ease:Power3.easeInOut
-	}, '-=1')
-	.to([ refreshCircle], 1, {
-	  drawSVG:'0% 100%'
-	},'-=2')
-	.to([ tick], 1, {
-	  drawSVG:'95% 20%'
-	},'-=2')
-	.set([loadLine, loadLineTip], {
-	  alpha:0
-	})
-	.to(loadLineGhost, 2, {
-	  alpha:0,
-	  ease:Power3.easeInOut
-	}, '-=2')
-	.to(refresh, 0.5, {
-	  alpha:1,
-	  ease:Power2.easeInOut
-	})
-	.to(downloading, 0.5, {
-	  alpha:0,
-	  ease:Power2.easeInOut
-	},'-=0.5')
-	.to([downloading, refresh], 0.5, {
-	  top:'+=10',
-	  ease:Power2.easeInOut,
-	  onComplete:playAgain
-	}, '-=0.5')
-	.addPause()
-	.to(refreshGroup,0.3, {
-	  alpha:0
-	})
-	.to(refresh, 0.5, {
-	  alpha:0,
-	  ease:Power2.easeInOut
-	})
-	.to(downloading, 0.5, {
-	  alpha:1,
-	  ease:Power2.easeInOut
-	},'-=0.5')
-	.to([downloading, refresh], 0.5, {
-	  top:'-=10',
-	  ease:Power2.easeInOut
-	}, '-=0.5')
+function firstPageSimpleAnimation (selector, xAxes, yAxes, alpha, wait, howLong){
+    $( selector ).transition({
+        x: xAxes,
+        y: yAxes,
+        opacity: alpha,
+        delay: wait
+    }, howLong, 'easeOutQuad');
+}
 
-	function playAgain(){
-		var matureContent = $('.matureContent'),
-			btn = $('.btn'),
-			container = $('.container');
+function animationFirstPage(){
+    var firstPage12 = $('#firstPage12'),
+        firstPage10 = $('#firstPage10'),
+        firstPage9 = $('#firstPage9'),
+        firstPage8 = $('#firstPage8');
 
-		matureContent.css({'visibility': 'initial'});
-		btn.css({'visibility': 'initial'});
-		container.transition({ opacity: 0, delay: 1000 }, 250, 'easeOutQuad', matureContStart());
-		function matureContStart(){
-			matureContent.transition({ y: 5, opacity: 1, delay: 1500 }, 1000, 'easeOutQuad');
-			btn.transition({ y: 5, opacity: 1, delay: 1250 }, 1000, 'easeOutQuad');
-		}
-	}
-};
-
-
-
-
-
-
-
-
-
-
-
-
+    startFirstAnimation();
+    setInterval(startFirstAnimation, 18000);
+    setInterval(sendAllBack, 15000);
+    function startFirstAnimation(){
+        firstPage12.transition({ x: 145, delay: 1000 }, 1500, 'easeOutQuad');
+        firstPage10.transition({ x: -145, delay: 1000 }, 1500, 'easeOutQuad');
+        firstPage12.transition({ y: 180, delay: 2000 }, 1500, 'easeOutQuad');
+        firstPage8.transition({ y: -180, delay: 4500 }, 1500, 'easeOutQuad');
+    }
+    function sendAllBack(){
+        firstPage12.transition({ x: 0, y: 0, delay: 1000 }, 1500, 'easeOutQuad');
+        firstPage10.transition({ x: 0, delay: 1000 }, 1500, 'easeOutQuad');
+        firstPage8.transition({ y: 0, delay: 1000 }, 1500, 'easeOutQuad');
+    }
+}

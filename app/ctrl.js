@@ -103,96 +103,112 @@ latinSquaresGame.controller('ctrl', ['$scope', '$rootScope', function($scope, $r
 		    src: "img/d2.png",
 		    show: false,
 		    animate: false,
+			firstPage: false,
 		    id: 0
 		},
 		{
 		    src: "img/j3.png",
 		    show: false,
 		    animate: false,
+			firstPage: false,
 		    id: 1
 		},
 		{
 		    src: "img/a1.png",
 		    show: false,
 		    animate: false,
+			firstPage: false,
 		    id: 2
 		},
 		{
 		    src: "img/d1.png",
 		    show: false,
 		    animate: false,
+			firstPage: false,
 		    id: 3
 		},
 		{
 		    src: "img/j2.png",
 		    show: false,
 		    animate: false,
+			firstPage: false,
 		    id: 4
 		},
 		{
 		    src: "img/a4.png",
 		    show: false,
 		    animate: false,
+			firstPage: false,
 		    id: 5
 		},
 		{
 		    src: "img/d4.png",
 		    show: false,
 		    animate: false,
+			firstPage: false,
 		    id: 6
 		},
 		{
 		    src: "img/a3.png",
 		    show: false,
 		    animate: false,
+			firstPage: false,
 		    id: 7
 		},
 		{
 			src: "img/k3.png",
 			show: false,
 			animate: false,
+			firstPage: true,
 			id: 8
 		},
 		{
 			src: "img/k2.png",
 			show: false,
 			animate: false,
+			firstPage: true,
 			id: 9
 		},
 		{
 			src: "img/k1.png",
 			show: false,
 			animate: false,
+			firstPage: true,
 			id: 10
 		},
 		{
 			src: "img/j4.png",
 			show: false,
 			animate: false,
+			firstPage: false,
 			id: 11
 		},
 		{
 			src: "img/j1.png",
 			show: false,
 			animate: false,
+			firstPage: true,
 			id: 12
 		},
 		{
 			src: "img/d3.png",
 			show: false,
 			animate: false,
+			firstPage: false,
 			id: 13
 		},
 		{
 			src: "img/a2.png",
 			show: false,
 			animate: false,
+			firstPage: false,
 			id: 14
 		},
 		{
 			src: "img/k4.png",
 			show: false,
 			animate: false,
+			firstPage: false,
 			id: 15
 		},
 	];
