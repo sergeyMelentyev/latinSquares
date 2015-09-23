@@ -1,10 +1,7 @@
 'use strict';
 
-var timeoutID;
-window.addEventListener("load", function load(event){
-	window.removeEventListener("load", load, false); 
-	timeoutID = window.setTimeout(startApplication, 10);
-},false);
+var timeoutID = window.setTimeout(startApplication, 1000);
+
 function startApplication () {
     $('.matureContent').css({'visibility': 'initial'});
     $('.btn').css({'visibility': 'initial'});
